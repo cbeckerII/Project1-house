@@ -11,8 +11,8 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
+    private Square grass;
+    private Square sky;
     private Triangle roof;
     private Circle sun;
 
@@ -29,18 +29,19 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveHorizontal(0);
+        grass.moveVertical(240);
+        grass.changeSize(800);
+        grass.makeVisible();
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
+        sky = new Square();
+        sky.changeColor("blue");
+        sky.moveHorizontal(0);
+        sky.moveVertical(-560);
+        sky.changeSize(800);
+        sky.makeVisible();
 
         roof = new Triangle();  
         roof.changeSize(60, 180);
@@ -61,10 +62,10 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        if (wall != null)   // only if it's painted already...
+        if (grass != null)   // only if it's painted already...
         {
-            wall.changeColor("black");
-            window.changeColor("white");
+            grass.changeColor("black");
+            sky.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
         }
@@ -75,10 +76,10 @@ public class Picture
      */
     public void setColor()
     {
-        if (wall != null)   // only if it's painted already...
+        if (grass != null)   // only if it's painted already...
         {
-            wall.changeColor("red");
-            window.changeColor("black");
+            grass.changeColor("green");
+            sky.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
